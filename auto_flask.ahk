@@ -8,16 +8,13 @@ Global low_life_Y := 0
 Global life_color := ""
 Global low_life_flask_list := ["1", "2", "3", "4", "5"] 
 
-Activate_AutoFlask() {
-    ; Toggle the global variable
+ToggleAutoFlask() {
     Global auto_flask_active := !auto_flask_active
     
     if (auto_flask_active) {
         SetTimer(AutoFlask, -1)
     }
-    else {
-        MsgBox("Auto flask : Off", "T0.5")
-    }
+
     return
 }
 
@@ -39,7 +36,7 @@ AutoFlask() {
     return
 }
 
-Set_Autoflask() {
+SetAutoflask() {
     MouseGetPos(&low_life_X, &low_life_Y)
     Global life_color := PixelGetColor(low_life_X, low_life_Y)
     return

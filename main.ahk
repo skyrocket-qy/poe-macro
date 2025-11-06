@@ -5,6 +5,8 @@
 #Include logout.ahk
 #Include hideout.ahk
 #Include afk.ahk
+#Include auto_flask.ahk
+#Include loop_keys.ahk
 
 if !WinActive("Path of Exile"){
     return
@@ -18,3 +20,8 @@ F12::Afk()
 F2::StuckKeys("NumpadHome")
 ; drink all flasks
 1::MultiKeysRand("1", "2", "3", "4", "5") 
+
+^+F::SetAutoflask()      ; Ctrl + Shift + F
+^F::ToggleAutoFlask()    ; Ctrl + F
+
+^G::ToggleLoopKeys()    ; Ctrl + G

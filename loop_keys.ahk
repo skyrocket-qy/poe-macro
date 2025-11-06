@@ -5,14 +5,17 @@
 isLooping := false
 
 LoopKeys(keys*) {
+    while isLooping {
+        MultiKeys(keys*)
+    }
+}
+
+ToggleLoopKeys(){
     global isLooping
     isLooping := !isLooping  ; toggle state
-
-    if isLooping {
-        while isLooping {
-            MultiKeys(keys*)
-        }
-    } else {
-        sleepRand(100, 200)
+    if (isLooping) {
+        SetTimer(LoopKeys, -1)
     }
+    
+    return
 }
