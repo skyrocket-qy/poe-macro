@@ -1,9 +1,18 @@
 #Requires AutoHotkey v2.0
 #Include util.ahk
+#Include multi_keys.ahk
 
-LoopKeys(keys*){
-    for index, key in keys {
-        Send "{" key "}"
-        sleepRand(150, 300)
+isLooping := false
+
+LoopKeys(keys*) {
+    global isLooping
+    isLooping := !isLooping  ; toggle state
+
+    if isLooping {
+        while isLooping {
+            MultiKeys(keys*)
+        }
+    } else {
+        sleepRand(100, 200)
     }
 }

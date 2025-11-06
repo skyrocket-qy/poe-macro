@@ -30,3 +30,4 @@ command(input) {
     Send "{Enter}"
     BlockInput("Off")
 }
+
