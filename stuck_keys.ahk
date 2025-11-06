@@ -3,9 +3,6 @@
 
 ; Variadic function (keys is now a pseudo-array)
 StuckKeys(keys*) {
-    if !WinActive("Path of Exile")
-        return
-
     ; Send all keys Up first
     for index, key in keys {
         sleepRand()
